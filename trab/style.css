@@ -3,20 +3,37 @@ body {
   background-color: #f4f4f4;
   font-family: Arial, sans-serif;
 }
-.topo {
-  background-color: #ffffff;
-  padding: 15px 30px;
+header {
   display: flex;
   align-items: center;
+  padding: 0 10px;
 }
-#imagem {
-  width: 150px;
+nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
-.menu a {
+nav ul {
+  display: flex;
+  list-style: none;
+}
+ul a:link,
+a:visited {
+  padding: 10px;
   text-decoration: none;
-  margin-left: 100px;
-  color: black;
+  color: #484848;
 }
-.menu a:hover {
-  color: cadetblue;
+ul a:hover {
+  color: #0b5cff;
+}
+.botao {
+  text-decoration: none;
+  color: #0b5cff;
+  border: 2px solid#0b5cff;
+  border-radius: 25px;
+  padding: 5px 20px;
+}
+.botao.destaque {
+  background-color: #0b5cff;
+  color: white;
 }
