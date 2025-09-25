@@ -7,6 +7,8 @@ header {
   display: flex;
   align-items: center;
   padding: 0 10px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 nav {
   flex-grow: 1;
