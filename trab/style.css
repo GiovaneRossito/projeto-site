@@ -1,23 +1,39 @@
+html,
 body {
+  height: 100%;
   margin: 0;
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 header {
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  margin-left: 60px;
-  margin-right: 60px;
+  padding: 0px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
 }
 nav {
   flex-grow: 1;
   display: flex;
   justify-content: center;
 }
-nav ul {
-  display: flex;
+header nav a {
+  text-decoration: none;
+  color: #484848;
+  font-weight: 500;
+}
+header nav ul {
   list-style: none;
+  display: flex;
+  gap: 25px;
 }
 ul a:link,
 a:visited {
@@ -25,76 +41,87 @@ a:visited {
   text-decoration: none;
   color: #484848;
 }
-ul a:hover {
+header nav a:hover {
   color: #0b5cff;
-}
-.botao {
-  text-decoration: none;
-  color: #0b5cff;
-  border: 2px solid#0b5cff;
-  border-radius: 25px;
-  padding: 5px 20px;
 }
 .botao {
   background-color: #0b5cff;
   color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
-/* 1. O CONTAINER */
+
+.botao:hover {
+  background-color: #41c3ff;
+}
 .topo {
   position: relative;
   overflow: hidden;
   height: 75vh;
+  background-color: #f0f8ff;
 }
 
-/* 2. O OVERLAY AZUL */
-.topo::before {
-  content: "";
+.topo .imagem {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(11, 92, 255, 0.3);
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(11, 92, 255, 0.2),
-    rgba(11, 92, 255, 0.5)
-  );
-  z-index: 1;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+  opacity: 0.9;
 }
 
-/* 3. A IMAGEM (sem mudanças) */
-.topo img {
-  display: block;
-  width: 100%;
-  height: auto;
+/* Esconde a imagem de MOBILE por padrão */
+.imagem-mobile {
+  display: none;
 }
 
-/* 4. O TÍTULO H1 (com ajustes de robustez) */
-.topo h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* ============================ */
+/* === REGRAS PARA CELULAR === */
+/* ============================ */
+@media (max-width: 768px) {
+  /* --- AJUSTES DO CABEÇALHO --- */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  header div {
+    width: 100%;
+  }
+  .botao {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+  }
 
-  /* --- AJUSTES IMPORTANTES --- */
-  z-index: 10; /* Garante que o H1 (e tudo dentro dele) fique na frente */
-  width: 100%; /* Faz o H1 ocupar toda a largura para centralizar o texto corretamente */
-  text-align: center; /* Centraliza todo o conteúdo do H1 */
+  /* --- LÓGICA CORRETA PARA TROCAR IMAGENS --- */
+  .topo {
+    height: auto;
+  }
 
-  /* Estilos visuais */
-  color: white;
-  font-size: 3em;
-  font-weight: bold;
-  margin: 0;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 2px 5px rgba(0, 0, 0, 0.4);
-}
+  /* Esconde a imagem de DESKTOP (classe .imagem) no celular */
+  .imagem {
+    display: none;
+  }
 
-/* 5. O SPAN COM DESTAQUE AZUL */
-.topo h1 .texto-destaque {
-  display: block;
-  color: #89cff0;
-  /* A sombra é herdada do H1, mas você pode sobrescrever se quiser */
-  /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); */
+  /* Mostra a imagem de MOBILE (classe .imagem-mobile) no celular */
+  .imagem-mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* position: static; não é mais necessário pois não há conflito */
+  }
 }
