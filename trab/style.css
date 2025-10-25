@@ -40,7 +40,6 @@ ul a:link,
 a:visited {
   padding: 10px;
   text-decoration: none;
-  color: #484848;
 }
 header nav a:hover {
   color: #0b5cff;
@@ -74,17 +73,10 @@ header nav a:hover {
   filter: brightness(0.9) contrast(1.05);
   opacity: 0.9;
 }
-
-/* Esconde a imagem de MOBILE por padrão */
 .imagem-mobile {
   display: none;
 }
-
-/* ============================ */
-/* === REGRAS PARA CELULAR === */
-/* ============================ */
 @media (max-width: 768px) {
-  /* --- AJUSTES DO CABEÇALHO --- */
   header {
     flex-direction: column;
     align-items: center;
@@ -107,31 +99,419 @@ header nav a:hover {
     box-sizing: border-box;
     text-align: center;
   }
-
-  /* --- LÓGICA CORRETA PARA TROCAR IMAGENS --- */
   .topo {
     height: auto;
   }
-
-  /* Esconde a imagem de DESKTOP (classe .imagem) no celular */
   .imagem {
     display: none;
   }
-
-  /* Mostra a imagem de MOBILE (classe .imagem-mobile) no celular */
   .imagem-mobile {
     display: block;
     width: 100%;
     height: auto;
-    /* position: static; não é mais necessário pois não há conflito */
   }
 }
-.paragrafo {
-  text-align: center;
-  font-size: 20px;
+.missao-secao {
+  background-color: #f8f9fa; /* Fundo cinza claro */
+  padding: 10px 20px;       /* Espaçamento interno */
+  text-align: center;         /* Centraliza o texto */
+} 
+
+.missao-secao h3 {
+  font-size: 2.8rem; /* Tamanho do título "Nossa Missão" */
+  color: #212529;    /* Cor escura */
+  margin-bottom: 24px; /* Espaço abaixo do título */
 }
+.missao-secao .paragrafo p {
+  font-size: 1.15rem;
+  color: #555;         /* Cor cinza para o texto */
+  line-height: 1.7;   /* Altura da linha (melhora leitura) */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.impacto-secao {
+  background-color: #ffffff; /* Fundo branco */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.impacto-secao h3 {
+  font-size: 2.8rem;
+  color: #212529;
+  margin-bottom: 16px;
+}
+
+.impacto-secao .subtitulo {
+  font-size: 1.15rem;
+  color: #6c757d; /* Um cinza mais suave */
+  margin-bottom: 50px;
+}
+
+/* Ajuste no .estatisticas que você já tem */
 .estatisticas {
   display: flex;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap; /* Importante para quebrar em telas menores */
+}
+
+.estatistica-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* Largura de cada item */
+}
+
+.icone-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%; /* Deixa o container redondo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: white; /* Cor do ícone */
+}
+
+.icone-container i {
+  font-size: 2.5rem; /* Tamanho do ícone */
+}
+
+/* Cores dos ícones (com gradientes como na imagem) */
+.icone-azul {
+  background: linear-gradient(135deg, #2196f3, #007bff);
+}
+
+.icone-laranja {
+  background: linear-gradient(135deg, #ff9800, #fd7e14);
+}
+
+.icone-verde {
+  background: linear-gradient(135deg, #4caf50, #28a745);
+}
+
+.icone-gradiente {
+  background: linear-gradient(135deg, #41c3ff, #28a745, #ffc107);
+}
+
+.estatistica-item .numero {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0b5cff; /* Azul principal do site */
+  line-height: 1.2;
+}
+
+.estatistica-item .descricao {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+@media (max-width: 480px) {
+  .estatistica-item {
+    /* 1 coluna */
+    width: 100%;
+  }
+
+  .estatisticas {
+    gap: 30px; /* Espaço vertical entre os itens */
+  }
+  projetos-secao h3 {
+  font-size: 2.2rem; /* Título um pouco menor no mobile */
+}
+
+.projeto-card {
+  /* O card vai ocupar quase 100% da tela no mobile */
+  width: 100%;
+  max-width: 400px; /* Limite para não ficar largo demais em tablets */
+}
+
+.projeto-imagem-container {
+  height: 200px; /* Imagem um pouco mais baixa no mobile */
+}
+
+.projeto-conteudo h4 {
+  font-size: 1.3rem;
+}
+}
+.projetos-secao {
+  background-color: #f8f9fa; /* Fundo cinza claro, igual ao da Missão */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projetos-secao h3 {
+  font-size: 2.8rem;
+  color: #212529;
+  margin-bottom: 16px;
+}
+
+.projetos-secao .subtitulo {
+  font-size: 1.15rem;
+  color: #6c757d;
+  margin-bottom: 50px;
+}
+
+.projetos-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+  gap: 30px;
+  text-align: left; /* Alinha o texto dos cards à esquerda */
+}
+
+.projeto-card {
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Importante para a imagem respeitar o border-radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.projeto-imagem-container {
+  position: relative; /* Necessário para posicionar o ícone */
+  height: 220px;
+}
+
+.projeto-imagem-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.projeto-icone {
+  position: absolute; /* Posiciona o ícone sobre a imagem */
+  bottom: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Reutilizando as cores de ícone da seção "Impacto" */
+/* Você já tem .icone-azul, .icone-laranja, .icone-verde no seu CSS */
+
+.projeto-conteudo {
+  padding: 25px;
+}
+
+.projeto-conteudo h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.projeto-conteudo p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.historia-secao {
+  background-color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.historia-secao h3 {
+  font-size: 2.8rem;
+  color: #0b5cff; /* Azul, conforme seu pedido */
+  margin-bottom: 16px;
+}
+
+.historia-secao .subtitulo {
+  font-size: 1.15rem;
+  color: #6c757d;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Container para o vídeo */
+.video-container {
+  width: 100%;
+  max-width: 900px; /* Largura máxima do vídeo */
+  margin: 0 auto;
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Garante que o vídeo respeite as bordas */
+  line-height: 0; /* Remove espaço extra que algumas fontes causam */
+}
+
+/* Estilo para a tag <video> */
+.video-container video {
+  width: 100%; /* Faz o vídeo ser responsivo */
+  height: auto;
+  display: block; /* Remove espaço extra abaixo do vídeo */
+  border-radius: 16px; /* Garante que o vídeo em si tenha bordas arredondadas */
+}
+html {
+  scroll-behavior: smooth;
+}
+.historia-resumo {
+  max-width: 900px; /* Largura máxima igual à do vídeo para alinhamento */
+  margin: 0 auto;
+  padding: 30px;
+  text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+  background-color: #ffffff; /* Fundo branco para se integrar com a seção */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra mais leve */
+}
+
+.historia-resumo h4 {
+  font-size: 1.8rem;
+  color: #0b5cff; /* Azul primário do projeto para dar destaque */
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #e9ecef; /* Linha de separação mais suave */
+}
+
+.historia-resumo p {
+  font-size: 1.1rem;
+  color: #495057; /* Cinza escuro para melhor legibilidade */
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.historia-resumo p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .historia-resumo {
+    padding: 20px;
+  }
+}
+
+/* Estilos do Rodapé (Footer) - Versão MÁXIMO COMPACTA E Centralizada */
+footer {
+    background-color: #ffffff;
+    color: #495057;
+    padding: 30px 20px 0; /* MUITO REDUZIDO: Apenas 30px no topo */
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    gap: 80px; /* Mantém a separação horizontal para clareza */
+    flex-wrap: wrap;
+    padding-bottom: 20px; /* MUITO REDUZIDO: Apenas 20px no fundo do container */
+}
+
+.footer-col {
+    min-width: 250px;
+    max-width: 400px; 
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 5px; /* Quase sem espaço abaixo da logo */
+}
+
+.footer-col h4 {
+    font-size: 1.4rem; /* Levemente menor */
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 15px; /* Reduzido o espaço abaixo dos títulos */
+}
+
+/* Coluna de Informação (Mãos que Ajudam) */
+.footer-info {
+    max-width: 300px;
+    text-align: left; 
+}
+.footer-info h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0b5cff;
+}
+
+.footer-info p {
+    font-size: 1rem; /* Tamanho padrão */
+    line-height: 1.5; /* Altura da linha mais compacta */
+}
+
+/* Coluna de Contato */
+.footer-contato {
+    text-align: left;
+}
+.footer-contato ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contato ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* MUITO REDUZIDO: Apenas 10px entre os itens de contato */
+    font-size: 0.95rem; /* Levemente menor */
+}
+
+.footer-contato ul li i {
+    color: #0b5cff;
+    margin-right: 10px;
+    font-size: 1.1rem; 
+}
+
+/* Rodapé de Copyright */
+.footer-copyright {
+    text-align: center;
+    padding: 15px 0; /* MUITO REDUZIDO: Apenas 15px de padding */
+    border-top: 1px solid #f1f1f1;
+    font-size: 0.9rem; /* Levemente menor */
+    color: #6c757d;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center; 
+        gap: 25px; /* Mais compacto no mobile também */
+    }
+    
+    .footer-info, .footer-contato {
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: 100%;
+        max-width: 400px;
+    }
+
+    .footer-contato ul {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-contato ul li {
+        justify-content: center;
+    }
+    
+    .footer-info h4 {
+        justify-content: center;
+    }
 }

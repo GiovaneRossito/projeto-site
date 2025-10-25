@@ -6,41 +6,191 @@
     <title>Projeto mãos que ajudam</title>
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   </head>
   <body>
     <header>
-      <a href="#">
+      <a href="#topo">
         <img width="150px" src="imagens/logo.png" alt="logo" />
       </a>
       <nav>
         <ul>
-          <li><a href="#">Nossa história</a></li>
-          <li><a href="#">Nossa missão</a></li>
-          <li><a href="#">Localidade</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#missao">Nossa missão</a></li>
+          <li><a href="#impacto">Impacto</a></li>
+          <li><a href="#projeto">Projetos</a></li>
+          <li><a href="#historia">Nossa História</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
       <div>
-        <a class="botao" href="#">Doe agora</a>
+        <a class="botao" href="https://wa.me/5518997522164?text=Olá!%20Tenho%20interesse%20em%20fazer%20uma%20doação%20para%20a%20ONG.%20Poderiam%20me%20passar%20mais%20informações%3F
+">Doe agora</a>
       </div>
     </header>
     <main>
-      <section class="topo">
+      <section id="topo" class="topo">
         <img class="imagem" src="imagens/ft-7.jpg" alt="" />
         <img class="imagem-mobile" src="imagens/ft-7.jpg" alt="" />
       </section>
+      <section id="missao" class="missao-secao">
+      <h3>Nossa Missão</h3>
       <div class="paragrafo">
-        <p>
-          Há mais de 10 anos construindo um futuro melhor através de educação,
-          saúde e desenvolvimento comunitário sustentável.
-        </p>
-        <div class="estatisticas">
-          <div><strong>12K+</strong><br />Vidas Impactadas</div>
-          <div><strong>45</strong><br />Projetos Ativos</div>
-          <div><strong>8</strong><br />Países</div>
-          <div><strong>98%</strong><br />Transparência</div>
+      <p>
+        Promover o desenvolvimento integral de crianças, jovens e famílias em
+        situação de vulnerabilidade social, através de ações educacionais,
+        culturais, esportivas e de saúde, contribuindo para a construção de
+        uma sociedade mais justa e igualitária.
+      </p>
+      </div>
+      </section>
+      <section id="impacto" class="impacto-secao">
+  <h3>Nosso Impacto</h3>
+  <p class="subtitulo">Resultados que transformam comunidades</p>
+
+  <div class="estatisticas">
+    <div class="estatistica-item">
+      <div class="icone-container icone-azul">
+        <i class="bi bi-people-fill"></i>
+      </div>
+      <span class="numero">10mil+</span>
+      <span class="descricao">Vidas Impactadas</span>
+    </div>
+
+    <div class="estatistica-item">
+      <div class="icone-container icone-laranja">
+        <i class="bi bi-bullseye"></i>
+      </div>
+      <span class="numero">4</span>
+      <span class="descricao">Projetos Ativos</span>
+    </div>
+
+    <div class="estatistica-item">
+      <div class="icone-container icone-verde">
+        <i class="bi bi-geo-alt-fill"></i>
+      </div>
+      <span class="numero">8</span>
+      <span class="descricao">Estados Atendidos</span>
+    </div>
+
+    <div class="estatistica-item">
+      <div class="icone-container icone-gradiente">
+        <i class="bi bi-award-fill"></i>
+      </div>
+      <span class="numero">10+</span>
+      <span class="descricao">Anos de História</span>
+    </div>
+  </div>
+</section>
+<section id="projeto" class="projetos-secao">
+  <h3>Nossos Projetos</h3>
+  <p class="subtitulo">Áreas onde fazemos a diferença</p>
+
+  <div class="projetos-grid">
+    <div class="projeto-card">
+      <div class="projeto-imagem-container">
+        <img
+          src="imagens/1010.jpg"
+          alt="Crianças"
+        />
+        <div class="projeto-icone icone-azul">
+          <i class="bi bi-book-fill"></i>
         </div>
       </div>
+      <div class="projeto-conteudo">
+        <h4>Educação para Todos</h4>
+        <p>
+          Reforço escolar, alfabetização e atividades culturais para crianças e
+          jovens.
+        </p>
+      </div>
+    </div>
+
+    <div class="projeto-card">
+      <div class="projeto-imagem-container">
+        <img
+          src="imagens/ft-9.jpg"
+          alt="Profissionais de saúde com comunidade"
+        />
+        <div class="projeto-icone icone-laranja">
+          <i class="bi bi-heart-fill"></i>
+        </div>
+      </div>
+      <div class="projeto-conteudo">
+        <h4>Saúde Comunitária</h4>
+        <p>
+          Atendimento médico, campanhas de prevenção e apoio psicológico.
+        </p>
+      </div>
+    </div>
+
+    <div class="projeto-card">
+      <div class="projeto-imagem-container">
+        <img
+          src="imagens/ft-8.jpg"
+          alt="Distribuição de alimentos"
+        />
+        <div class="projeto-icone icone-verde">
+         <i class="bi bi-bandaid-fill"></i>
+      </div>
+      <div class="projeto-conteudo">
+        <h4>Segurança Alimentar</h4>
+        <p>
+          Distribuição de cestas básicas e refeições para famílias em
+          vulnerabilidade.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="historia" class="historia-secao">
+  <h3>Conheça Nossa História</h3>
+  <p class="subtitulo">
+    Assista ao vídeo e veja de perto o impacto que estamos fazendo juntos
+  </p>
+
+  <div class="video-container">
+    <video
+      controls
+      poster="imagens/poster.png"
+      src="imagens/Video01.mp4"
+    >
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+  </div>
+  <div class="historia-resumo">
+    <h4>Projeto Mãos que Ajudam – Uma Década de Sorrisos e Solidariedade</h4>
+    <p>
+      Nascido em 2016 pela iniciativa de Gabriel Volffe Arruda em Assis (SP), o Projeto Mãos que Ajudam começou de forma simples, distribuindo 150 brinquedos no Dia das Crianças. O gesto cresceu exponencialmente: de uma ação familiar, passou a envolver amigos e, mais tarde, dezenas de voluntários, chegando a entregar 3 mil brinquedos e kits de doces em 2021.
+    </p>
+    <p>
+      Em 2022, o projeto se transformou em uma grande Festa do Dia das Crianças no Parque Ecológico Ângelo Ceola, oferecendo brinquedos infláveis, comidas, personagens e atividades lúdicas como o "Hospital do Ursinho" (em parceria com alunos de Medicina da FEMA), tudo 100% gratuito. Mantido 50% por recursos próprios de Gabriel e 50% por doações e parcerias, o projeto alcançou em 2024 a marca de 14 mil crianças atendidas ao longo de 10 anos. A festa anual, realizada sempre em 12 de outubro, é um símbolo de união e esperança para a comunidade de Assis.
+    </p>
+  </div>
+</section>
     </main>
+    <footer id="contato">
+    <div class="footer-container">
+        <div class="footer-col footer-info">
+            <img width="30px" src="imagens/favicon.ico" alt="Logo Mãos que Ajudam" class="footer-logo">
+            
+            <h4>Mãos que Ajudam</h4>
+            <p>Transformando vidas e construindo futuros desde 2016.</p>
+        </div>
+
+        <div class="footer-col footer-contato">
+            <h4>Contato</h4>
+            <ul>
+                <li><i class="bi bi-envelope-fill"></i> volffeeventosesportivos@gmail.com</li>
+                <li><i class="bi bi-phone-fill"></i> (18) 99752-2164</li>
+                <li><i class="bi bi-geo-alt-fill"></i> Assis, SP</li>
+            </ul>
+        </div>
+        
+        </div>
+    
+    <div class="footer-copyright">
+        <p>© 2025 Mãos que Ajudam. Todos os direitos reservados.</p>
+    </div>
+</footer>
   </body>
 </html>
