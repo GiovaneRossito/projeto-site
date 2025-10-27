@@ -13,15 +13,14 @@
       <a href="#topo">
         <img width="150px" src="imagens/logo.png" alt="logo" />
       </a>
-      <nav>
-        <ul>
-          <li><a href="#missao">Nossa missão</a></li>
-          <li><a href="#impacto">Impacto</a></li>
-          <li><a href="#projeto">Projetos</a></li>
-          <li><a href="#historia">Nossa História</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+  <nav>
+  <ul>
+    <li><a href="index.html">Início</a></li> 
+    <li><a href="sobre.html">Sobre</a></li> 
+    <li><a href="projetos.html">Projetos</a></li> 
+    <li><a href="contato.html">Contato</a></li> 
+  </ul>
+</nav>
       <div>
         <a class="botao" href="https://wa.me/5518997522164?text=Olá!%20Tenho%20interesse%20em%20fazer%20uma%20doação%20para%20a%20ONG.%20Poderiam%20me%20passar%20mais%20informações%3F
 ">Doe agora</a>
@@ -148,15 +147,25 @@
     Assista ao vídeo e veja de perto o impacto que estamos fazendo juntos
   </p>
 
-  <div class="video-container">
-    <video
-      controls
-      poster="imagens/poster.png"
-      src="imagens/Video01.mp4"
-    >
-      Seu navegador não suporta o elemento de vídeo.
-    </video>
-  </div>
+ <div class="video-container">
+  <video
+    id="meuVideo" controls
+    poster="imagens/poster.png"
+    src="imagens/vid-1.mp4"
+  >
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+</div>
+<script>
+  const video = document.getElementById('meuVideo');
+  const duracaoMaxima = 120;
+  video.addEventListener('timeupdate', function() {
+    if (video.currentTime >= duracaoMaxima) {
+      video.pause(); // Pausa o vídeo
+      video.currentTime = duracaoMaxima; // pare em 2:00
+    }
+  });
+</script>
   <div class="historia-resumo">
     <h4>Projeto Mãos que Ajudam – Uma Década de Sorrisos e Solidariedade</h4>
     <p>

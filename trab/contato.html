@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato | Mãos que Ajudam</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+<body>
+    
+    <header>
+      <a href="index.html">
+        <img width="150px" src="imagens/logo.png" alt="logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="contato.html">Contato</a></li> </ul>
+      </nav>
+      <div>
+        <a class="botao" href="https://wa.me/5518997522164?text=Olá!%20Tenho%20interesse%20em%20fazer%20uma%20doação%20para%20a%20ONG.%20Poderiam%20me%20passar%20mais%20informações%3F">Doe agora</a>
+      </div>
+    </header>
+    <main>
+        <section class="secao-contato">
+            <div class="titulo-pagina-contato">
+                <h1 class="destaque">Entre em Contato</h1>
+                <p>Estamos prontos para ouvir você. Tire suas dúvidas ou saiba como ajudar</p>
+            </div>
+
+            <div class="container-formulario-info">
+                
+                <div class="coluna-info">
+                    <h2>Fale Conosco</h2>
+
+                    <div class="item-contato">
+                        <div class="icone-circulo icone-azul-claro">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua Curitiba, 872 Jardim Paraná</p>
+                            <p>Assis, SP</p>
+                            <p>CEP: 19.807-510</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item-contato">
+                        <div class="icone-circulo icone-laranja-claro">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(18) 99752-2164</p>
+                        </div>
+                    </div>
+
+                    <div class="item-contato">
+                        <div class="icone-circulo icone-verde-claro">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>volffeeventosesportivos@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="item-contato">
+                        <div class="icone-circulo icone-azul-horario">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 17h</p>
+                            <p>Sábado: 8h às 12h</p>
+                        </div>
+                    </div>
+                <div class="coluna-formulario">
+    <h2>Envie sua Mensagem</h2>
+    
+    <form id="formularioContato" onsubmit="abrirWhatsapp(event)" class="formulario-contato">
+        
+        <div class="input-group">
+            <div class="input-field">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+            </div>
+            <div class="input-field">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-field">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+            </div>
+            <div class="input-field">
+                <label for="assunto">Assunto</label>
+                <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+            </div>
+        </div>
+
+        <div class="input-full-width">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem aqui..." required></textarea>
+        </div>
+
+        <button type="submit" class="botao-enviar-mensagem">
+            Enviar Mensagem
+        </button>
+    </form>
+</div>
+<script>
+        function abrirWhatsapp(event) {
+            event.preventDefault(); 
+
+            // 1. Coleta os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const email = document.getElementById('email').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const numeroWhatsapp = '5518997522164'; 
+            
+            let textoMensagem = 
+                "*Nova Mensagem do Site:*\n" +
+                "------------------------------------\n" +
+                `*Nome:* ${nome}\n` +
+                `*E-mail:* ${email}\n` +
+                `*Telefone:* ${telefone || 'Não informado'}\n` + 
+                `*Assunto:* ${assunto}\n` +
+                "------------------------------------\n" +
+                `*Mensagem:*\n${mensagem}`;
+
+            const urlCodificada = encodeURIComponent(textoMensagem);
+
+            const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${urlCodificada}`;
+            window.open(urlWhatsapp, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contato">
+      <div class="footer-container">
+          <div class="footer-col footer-info">
+              <img width="30px" src="imagens/favicon.ico" alt="Logo Mãos que Ajudam" class="footer-logo">
+              
+              <h4>Mãos que Ajudam</h4>
+              <p>Transformando vidas e construindo futuros desde 2016.</p>
+          </div>
+
+          <div class="footer-col footer-contato">
+              <h4>Contato</h4>
+              <ul>
+                  <li><i class="bi bi-envelope-fill"></i> volffeeventosesportivos@gmail.com</li>
+                  <li><i class="bi bi-phone-fill"></i> (18) 99752-2164</li>
+                  <li><i class="bi bi-geo-alt-fill"></i> Assis, SP</li>
+              </ul>
+          </div>
+          
+      </div>
+      
+      <div class="footer-copyright">
+          <p>© 2025 Mãos que Ajudam. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    </body>
+</html>
